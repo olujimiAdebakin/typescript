@@ -56,7 +56,7 @@ class PersonClass {
 }
 
 // Child class
-class Employee extends PersonClass {
+class Employeee extends PersonClass {
   private role: string; // Only accessible within Employee class
 
   constructor(firstName: string, age: number, role: string) {
@@ -72,7 +72,7 @@ class Employee extends PersonClass {
 }
 
 // Creating an instance of Employee
-const emp = new Employee("John", 30, "Engineer");
+const emp = new Employeee("John", 30, "Engineer");
 
 emp.introduce(); // Outputs: Hi, my name is John.
 emp.showDetails(); // Outputs: John is an Engineer.
@@ -89,7 +89,7 @@ class Vehicle {
 }
 
 // Child class
-class Car extends Vehicle {
+class Carr extends Vehicle {
   // Overriding the drive method
   drive(): void {
     console.log("The car is driving fast!");
@@ -97,7 +97,7 @@ class Car extends Vehicle {
 }
 
 // Creating an instance of Car
-const myCar = new Car();
+const myCar = new Carr();
 myCar.drive(); // Outputs: The car is driving fast! (overridden method)
 
 

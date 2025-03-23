@@ -32,3 +32,4 @@
 // accounting.describe();
 // // Call the printEmployeeInformation method to display employee details
 // accounting.printEmployeeInformation();
+// static properties and methods
