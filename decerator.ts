@@ -1,9 +1,15 @@
-function Logger(constructor: Function) {
+
+// class Decorator
+
+function Logger() {
+  return function (constructor: Function) {
     console.log('Logging....');
     console.log(constructor);
-}
+  };
+  }
+  
 
-@Logger
+@Logger()
 class Person {
     name = 'Max';
 
@@ -14,13 +20,15 @@ class Person {
 }
 
 const pers = new Person('Maxwell');//maxwell
-console.log(pers.name, 'is a boy');//maxwell
+console.log(pers.name, 'is a boy');//maxwell is a boy
 
 
 function Logging(constructor: Function) {
   console.log("Logging....");
   console.log(constructor);
 }
+
+// converting to a fcatory
 
 @Logging
 class Robot {

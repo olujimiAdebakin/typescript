@@ -1,13 +1,16 @@
 "use strict";
+// class Decorator
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-function Logger(constructor) {
-    console.log('Logging....');
-    console.log(constructor);
+function Logger() {
+    return function (constructor) {
+        console.log('Logging....');
+        console.log(constructor);
+    };
 }
 let Person = class Person {
     constructor(name) {
@@ -17,14 +20,15 @@ let Person = class Person {
     }
 };
 Person = __decorate([
-    Logger
+    Logger()
 ], Person);
 const pers = new Person('Maxwell'); //maxwell
-console.log(pers.name, 'is a boy'); //maxwell
+console.log(pers.name, 'is a boy'); //maxwell is a boy
 function Logging(constructor) {
     console.log("Logging....");
     console.log(constructor);
 }
+// converting to a fcatory
 let Robot = class Robot {
     constructor(name, color) {
         this.name = name;
