@@ -83,3 +83,28 @@ objStorage.addItem({ name: 'Max' });
 objStorage.addItem({ name: 'Manu' });
 
 console.log(objStorage.getItems());
+
+
+// generic utility types
+
+// interface CourseGoal {
+//     title: string;
+//     description: string;
+//     completeUntil: Date;
+// }
+
+// function createCourseGoal(title: string, description: string, date: Date): CourseGoal {
+//     let CourseGoal: courseGoal = {};
+//     CourseGoal.title = title;
+// }
+
+// partial type
+// Converts all properties in a type to optional.
+// type Person = { name: string; age: number };
+
+// const person1: Partial<Person> = { name: "Alice" }; // ✅ No need for `age`
+
+
+type User = { id?: number; username?: string };
+
+const user1: Required<User> = { id: 1, username: "Olujimi" }; // ✅ No missing fields!

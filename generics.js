@@ -55,3 +55,4 @@ const objStorage = new DataStorage();
 objStorage.addItem({ name: 'Max' });
 objStorage.addItem({ name: 'Manu' });
 console.log(objStorage.getItems());
+const user1 = { id: 1, username: "Olujimi" }; // ✅ No missing fields!
